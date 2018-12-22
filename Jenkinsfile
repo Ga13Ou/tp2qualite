@@ -3,7 +3,7 @@ node {
     withMaven(maven:'maven') {
 
         stage('Checkout') {
-            git url: 'https://github.com/piomin/sample-spring-microservices.git', credentialsId: 'github-piomin', branch: 'master'
+            git url: 'https://github.com/Ga13Ou/tp2qualite.git', branch: 'master'
         }
 
         stage('Build') {
@@ -17,12 +17,11 @@ node {
         stage('Image') {
             dir ('discovery-service') {
                 def app = docker.build "localhost:5000/discovery-service:${env.version}"
-                app.push()
             }
         }
 
         stage ('Run') {
-            docker.image("localhost:5000/discovery-service:${env.version}").run('-p 8761:8761 -h discovery --name discovery')
+            docker.image("localhost:5000/discovery-service:${env.version}").run('-p 8761:8080 -h discovery --name discovery')
         }
 
         stage ('Final') {
