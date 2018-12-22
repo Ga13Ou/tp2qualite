@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  bookstoreapp:
+    image: bookstore
+    ports:
+     - "3001:8080"
+    deploy:
+      replicas: 3
