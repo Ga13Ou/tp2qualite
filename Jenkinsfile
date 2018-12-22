@@ -39,7 +39,11 @@ node {
     def dockerImage
     stage('build docker') {
 //        dockerImage = docker.build('bookstore')
-        sleep(3000)
+        sleep(5)
+    }
+    stage('deploy docker') {
+//        dockerImage = docker.build('bookstore')
+        sleep(2)
     }
 
 
