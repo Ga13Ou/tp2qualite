@@ -1,6 +1,6 @@
 node {
 
-    withMaven(maven:'maven') {
+
 
         stage('Checkout') {
             git url: 'https://github.com/Ga13Ou/tp2qualite.git', branch: 'master'
@@ -28,6 +28,5 @@ node {
             build job: 'account-service-pipeline', wait: false
         }
 
-    }
 
 }
