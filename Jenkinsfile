@@ -33,7 +33,7 @@ node {
 
     stage('packaging') {
         sh "./mvnw verify -DskipTests"
-        archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 
     def dockerImage
