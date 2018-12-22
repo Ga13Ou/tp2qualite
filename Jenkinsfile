@@ -15,7 +15,7 @@ node {
     }
 
     stage('install' ) {
-        sh "./mvnw install"
+        sh "./mvnw install -DskipTests "
     }
 
 
