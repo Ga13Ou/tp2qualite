@@ -6,8 +6,16 @@ node {
             git url: 'https://github.com/Ga13Ou/tp2qualite.git', branch: 'master'
         }
 
-        stage('Build') {
-            sh 'mvn clean install'
+        stage('clean') {
+            sh './mvnw clean install'
+
+            def pom = readMavenPom file:'pom.xml'
+            print pom.version
+            env.version = pom.version
+        }
+
+        stage('install') {
+            sh './mvnw install'
 
             def pom = readMavenPom file:'pom.xml'
             print pom.version
