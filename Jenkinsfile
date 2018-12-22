@@ -11,7 +11,7 @@ node {
 
     stage('clean') {
         sh "chmod +x mvnw"
-        sh "./mvnw clean"
+      //  sh "./mvnw clean"
     }
 
     stage('install' ) {
