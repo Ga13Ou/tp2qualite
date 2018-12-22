@@ -20,13 +20,13 @@ node {
 
 
     stage('backend tests') {
-        try {
-            sh "./mvnw test"
-        } catch(err) {
-            throw err
-        } finally {
-            junit '**/target/surefire-reports/TEST-*.xml'
-        }
+//        try {
+//            sh "./mvnw test"
+//        } catch(err) {
+//            throw err
+//        } finally {
+//            junit '**/target/surefire-reports/TEST-*.xml'
+//        }
     }
 
 
