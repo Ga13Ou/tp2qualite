@@ -1,0 +1,16 @@
+sudo: required
+langage: java
+jdk: oraclejdk8
+
+services:
+  - docker
+
+script:
+  - ./mvnw clean
+  - ./mvnw install -DskipTests
+  - ./mvnw test
+  - ./mvnw package
+
+after_success:
+  docker build -t bookStore/test1.2.3
+  docker push bookStore/test1.2.3
